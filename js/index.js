@@ -11,7 +11,7 @@ var alert = "Hola mundo";
 
 alert("Hello world"); */
 
-let amigos = ["Pedro","Juan","Arturo","Lupe"];
+/* let amigos = ["Pedro","Juan","Arturo","Lupe"];
 
 console.log(amigos[3]);
 
@@ -54,7 +54,7 @@ sumar();
     for (let k = 0; k < 10; k++) {
         console.log(j + "." + k);
     }
-}*/
+}
 
 // Ejercicio de destructuracion
 let objeto = {
@@ -70,4 +70,41 @@ console.log(b);
 // Ejercicio parametros  rest - spread
 let numeros = [1, 2, 3, 4, 5];
 
-console.log(...numeros);
+console.log(...numeros); */
+
+/*
+
+Ejercicio de destructuracion
+
+let sergio = ["Sergio", , 25, "Mexico"];
+let [nombre, estadoCivil, edad, pais] = sergio;
+
+console.log(nombre, pais);*/
+
+// La destructuracion es una sintaxis que permite extraer valores de arreglos y objetos y así asignarlos a variables de una forma mas sencilla. La desctructuracion es muy usada con objetos y arreglos en frameworks y librerias modernas
+
+/*
+
+Ejercicio de destructuracion con valor por defecto
+
+let sergio = ["Sergio", , 25, "Mexico"];
+let [nombre, estadoCivil, edad, pais, empleo = "Programador"] = sergio;
+
+console.log(nombre, empleo);*/
+
+/*
+
+Destructuracion con constantes con valor por defecto
+
+const objeto = {};
+const {a = 1000} = objeto;
+
+console.log(a);*/
+
+/* Ejercicio de destructuracion con valores por defecto
+const objeto = {a: 4, b: 6};
+const {a = 1000, b = 2000, c = 3000, d = 4000} = objeto;
+
+console.log(a, b, c, d);
+
+console.log(typeof a);*/
