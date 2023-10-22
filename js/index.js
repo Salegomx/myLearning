@@ -108,3 +108,28 @@ const {a = 1000, b = 2000, c = 3000, d = 4000} = objeto;
 console.log(a, b, c, d);
 
 console.log(typeof a);*/
+
+// Ejercicio con operador !==
+
+/* let uno = 1;
+let numero = 1;
+
+if (uno !== numero) {
+    console.log("Los numeros son DIFERENTES en valor o tipo");
+}
+else {
+    console.log("Los numeros son IGUALES en valor y en tipo");
+}*/
+
+// Ejercicio con operador !=
+
+/* let numeroUno = 6;
+let numeroDos = "6";
+
+if (numeroUno != numeroDos) {
+    console.log("Los numeros son DIFERENTES en valor (sin considerar el tipo de dato)");
+}
+else {
+    console.log("Los numeros son IGUALES en valor (sin considerar el tipo de dato)");
+} */
+
