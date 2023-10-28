@@ -171,3 +171,12 @@ let grado = calificacion >= 95 ? "A+" :
     calificacion >= 60 ? "D" : "F";
 
     console.log(calificacion, grado); */
+
+// Recorriendo un array con for sin propiedades
+
+/*let paises = ["Japon", "Mexico", "Australia", "China", "Canada"];
+
+for (let i = 0; i < 10; i++) {
+    console.log(paises[i]);
+};*/
+
