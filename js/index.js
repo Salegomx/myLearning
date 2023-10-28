@@ -191,3 +191,21 @@ console.log(nombre.length); */
 /*let amigos = ["Juan", "Pedro", "Arturo", "Ivan", "Pepe"];
 
 console.log(amigos.length);*/
+
+// Deteniendo un bucle
+
+/* for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    console.log(i);
+}*/
+
+// Saltando un dato con continue
+
+/* for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    console.log(i);
+} */
