@@ -191,3 +191,37 @@ console.log(nombre.length); */
 /*let amigos = ["Juan", "Pedro", "Arturo", "Ivan", "Pepe"];
 
 console.log(amigos.length);*/
+
+// Deteniendo un bucle
+
+/* for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    console.log(i);
+}*/
+
+// Saltando un dato con continue
+
+/* for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    console.log(i);
+} */
+
+//Ejercicio donde imprimimos las calificaciones usando la propiedad length
+
+/*let alumno = [
+    [5, 6, 2, 8, 3],
+    [8, 9, 10, 5, 7],
+    [3, 5, 8, 7, 8],
+    [10, 9, 8, 10, 10],
+    [6, 7, 9, 8, 9]
+];
+
+for (let i = 0; i < alumno.length; i++) {
+    for (let j = 0; j < alumno[i].length; j++) {
+        console.log(alumno[i][j]);
+    }
+};*/
