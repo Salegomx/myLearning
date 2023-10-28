@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding: 25px 20px;
+    background-color: #f5f5e9;
+    color: #222;
+    font-family: sans-serif;
+}
+
+#content {
+    max-width: 1020px;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
