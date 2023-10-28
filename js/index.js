@@ -180,3 +180,14 @@ for (let i = 0; i < 10; i++) {
     console.log(paises[i]);
 };*/
 
+// contando caracteres de texto usando length
+
+/* let nombre = "Sergio";
+
+console.log(nombre.length); */
+
+// contando posiciones de memoria de un array usando la propiedad length
+
+/*let amigos = ["Juan", "Pedro", "Arturo", "Ivan", "Pepe"];
+
+console.log(amigos.length);*/
