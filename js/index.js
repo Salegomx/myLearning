@@ -277,22 +277,20 @@ let calificaciones = [
     [7, 8, 5, 9, 7],
     [5, 7, 9, 6, 9],   
     [10, 9, 8, 9, 5],
-    [5, 9, 8, 6, 8]
+    [5, 5, 8, 6, 8]
 ]; 
 
-let total = 0;
 let reprobadas = [];
 
 for (let i = 0; i < calificaciones.length; i++) {
     for (let j = 0; j < calificaciones[i].length; j++) {
         if (calificaciones[i][j] < 6) {
-            total++;
             reprobadas.push("calificaciones[" + i +"]" + "[" + j + "]")
         }
     }
 }
 
-console.log("Reprobaste " + total + " materias");
+console.log("Reprobaste " + reprobadas.length + " materias");
 console.log("Las posiciones en el array de tus materias reprobadas son: ");
 
 for (let i = 0; i < reprobadas.length; i++) {
