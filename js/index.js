@@ -225,3 +225,25 @@ for (let i = 0; i < alumno.length; i++) {
         console.log(alumno[i][j]);
     }
 };*/
+
+// Reprobado o aprobado segun calificacion
+
+/*let calificaciones = [
+    [5, 6, 2, 8, 3],
+    [8, 9, 10, 5, 7],
+    [3, 5, 8, 7, 8],
+    [10, 9, 8, 10, 10],
+    [6, 7, 9, 8, 9]
+];
+
+for (let i = 0; i < calificaciones.length; i++) {
+    for (let j = 0; j < calificaciones[i].length; j++) {
+        if (calificaciones[i][j] < 6) {
+            console.log(calificaciones[i][j] + " Reprobado");
+        }
+        else {
+            console.log(calificaciones[i][j] + " Aprobado");
+        }
+    }
+}*/
+
