@@ -247,3 +247,25 @@ for (let i = 0; i < calificaciones.length; i++) {
     }
 }*/
 
+// Promediando calificaciones
+
+/*let array = [
+    [8, 10, 9, 8, 8],
+    [7, 8, 9, 9, 7],
+    [5, 7, 9, 8, 9],   
+    [10, 9, 8, 9, 9],
+    [5, 9, 8, 6, 8]
+];
+
+let suma = 0;
+let materias = 0;
+
+for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+        suma = suma + array[i][j];
+        materias++;
+    }
+}
+
+// Promedio =
+console.log(suma / materias);*/
