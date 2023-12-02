@@ -134,3 +134,74 @@ console.log(saludar());*/
 }()*/
 
 // Estudiar callbacks y estudiar ejercicos de console.log
+
+console.log(undefined + 'hola'); // undefinedhola
+
+console.log(undefined * 'hola'); // NaN
+
+console.log(undefined + true); // NaN
+
+console.log(undefined - true); // NaN
+
+console.log(undefined - 0); // NaN
+
+console.log(undefined + null); // NaN
+
+console.log(undefined + undefined); // NaN
+
+console.log(undefined + []); // undefined *Un array vacio es equivalente a nada
+
+console.log(undefined + {}); // undefined[object Object]
+
+console.log(undefined * []); // NaN
+
+console.log(undefined * {}); // NaN
+
+console.log(null + 'hola'); // nullhola
+
+console.log(null * 1); // 0
+
+console.log(null + true); // 1
+
+console.log(null + false); // 0
+
+console.log(null * []); // 0
+
+console.log(null * {}); // NaN
+
+console.log(null + null); // 0
+
+console.log(null + undefined); // NaN
+
+console.log(null + []); // null
+
+console.log(null + {}); // null[object Object]
+
+console.log([] + 'hola'); // hola
+
+console.log([] * 'hola'); // NaN
+
+console.log([] + 1); // 1
+
+console.log([] * 1); // 0
+
+console.log([] + false); // false
+
+console.log([] + true); // true
+
+console.log([] + null); // null
+
+console.log([] * null); // 0
+
+console.log([] + undefined); // undefined
+
+console.log([] * undefined); // NaN
+
+console.log([] + {}); // [object Object]
+
+console.log({} + 'hola'); // [object Object]hola
+
+console.log({} * 'hola'); // NaN
+
+console.log({} + 2); // [object Object]2
+
