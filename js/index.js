@@ -272,7 +272,7 @@ console.log(suma / materias);*/
 
 // Imprimir cuantas materias reprobo el alumno y despues imrpimir "reprobaste n materias"
 
-let calificaciones = [
+/* let calificaciones = [
     [8, 10, 9, 8, 8],
     [7, 8, 5, 9, 7],
     [5, 7, 9, 6, 9],   
@@ -295,4 +295,4 @@ console.log("Las posiciones en el array de tus materias reprobadas son: ");
 
 for (let i = 0; i < reprobadas.length; i++) {
     console.log(reprobadas[i]);
-}
+}*/
