@@ -34,3 +34,10 @@ console.log(0 === true); // false
 console.log(7 === '7'); // false
 console.log(0 === true); // false
 console.log(1 === true); // false
+console.log('2' > '12'); // true
+console.log('2' > []); // true
+console.log('2' > {}); // false JS intenta convertir el objeto a un dato primitivo
+console.log('2' > NaN); // false No hay forma de hacer una comparación
+console.log('2' > false); // true
+console.log('2' > true); // true
+console.log('0' > true); // false
