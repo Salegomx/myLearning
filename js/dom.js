@@ -27,3 +27,17 @@ nuevaVentana.open();*/
  // console.log(document.doctype); Muestra el tipo de documento con el que estas trabajando
 
  // console.log(document.charset); Muestra el tipo de caracteres que puedes usar que por default es UTF-8
+
+ // console.log(document.links); Muestra los links en el HTML
+
+ // Tarea: crear una cuenta de gitlab y subir este mismo repositorio
+
+ // console.log(document.title); Imprime el titulo del documento
+
+ // console.log(document.images); Imprime las imagenes contenidas en el documento
+
+ // console.log(document.forms); Imprime etiquetas form en el documento
+
+ // console.log(document.styleSheets); Imprime las propiedades de el archivo CSS
+
+ 
