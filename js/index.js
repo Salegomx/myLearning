@@ -296,3 +296,83 @@ console.log("Las posiciones en el array de tus materias reprobadas son: ");
 for (let i = 0; i < reprobadas.length; i++) {
     console.log(reprobadas[i]);
 }*/
+
+// Destructurando un array y poniendole un valor por defecto en su destructuracion
+
+/*let persona = ['Sergio', 25, 'Mexico'];
+
+let [nombre, edad, nacionalidad, profesion = "programador"] = persona;
+
+console.log(profesion);*/
+
+// Imprimiendo un valor que esta adentro de un arreglo, ejecutandolo con una funcion
+
+// Modo 1:
+/*let persona = ['Sergio', 25, 'Mexico'];
+
+let imprimirDato = (dato) => {
+    console.log(dato)
+}
+
+imprimirDato(persona[0])*/
+
+// Modo 2:
+/*let persona = ['Sergio', 25, 'Mexico'];
+
+let [nombre, edad, nacionalidad] = persona;
+
+let imprimirDato = ([nombre, edad, nacionalidad]) => {
+    console.log(nombre)
+}
+
+imprimirDato(persona);*/
+
+// Modo 3:
+/*let persona = ['Sergio', 25, 'Mexico'];
+let [nombre, edad, nacionalidad] = persona;
+
+let imprimirDato = (persona) => {
+    console.log(nacionalidad)
+}
+
+imprimirDato(persona);*/
+
+// Modo 4:
+/*let persona = ['Sergio', 25, 'Mexico'];
+let [nombre, edad, nacionalidad] = persona;
+
+let imprimirDato = (persona) => console.log(edad)
+
+imprimirDato(persona);*/
+
+// Destructurando un objeto (no estoy obligado a destructurar todas las propiedades del objeto)
+/*let persona = {
+    nombre: 'Arturo',
+    apellido: 'Gonzalez',
+    edad: 30, 
+    pais: 'Mexico',
+    profesion: 'carpintero'
+}
+
+let {nombre, apellido, profesion} = persona;
+
+let imprimirDato = (persona) => {
+    console.log(`Hola soy ${nombre} y soy ${profesion}`)
+}
+
+imprimirDato();*/
+
+/*let array1 = ['Sergio', 25, 'Mexico'];
+let array2 = ['Juan', 20, 'Guatemala'];
+let objeto1 = {nombre: 'Pedro', edad: 40, pais: 'Canada'};
+
+let [nombre1, edad1, pais1] = array1;
+let [nombre2, edad2, pais2] = array2;
+let {nombre3, edad3, pais3} = objeto1;
+
+let imprimir = ({nombre3, edad3, pais3}) => {
+    console.log(nombre3, edad3, pais1);
+}
+
+imprimir(objeto1)*/
+
