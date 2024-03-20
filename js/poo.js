@@ -261,7 +261,7 @@ persona1.nombre = "";
 console.log(`Nombre: ${persona1.nuevoNombre}`);
 console.log(`Edad: ${persona1.nuevaEdad}`);*/
 
-class Persona {
+/*class Persona {
     constructor(nombre, edad) {
         this._nombre = nombre;  // _nombre es una convención para indicar que es una propiedad privada
         this._edad = edad;
@@ -312,4 +312,124 @@ persona1.nombre = '';  // Esto imprimirá un error en la consola
 
 // Mostrar los valores actualizados
 console.log(`Nuevo Nombre: ${persona1.nombre}`);
-console.log(`Nueva Edad: ${persona1.edad}`);
+console.log(`Nueva Edad: ${persona1.edad}`);*/
+
+/*class Animal {
+    constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+        this.raza = null;
+    }
+    sonido() {
+        console.log("Hago sonidos porque estoy vivo");
+    }
+    saludar() {
+        console.log(`Hola, me llamo ${this.nombre}`);
+    }
+}
+
+class Perro extends Animal {
+    constructor(nombre, genero, tamanio) {
+        super(nombre, genero);
+        this.tamanio = tamanio;
+    }
+    saludar() {
+        console.log("Sobreescribiendo la clase");
+    }
+    ladrar() {
+        console.log("Wuau wuau");
+    }
+    static estatico(param) {
+        console.log(param);
+    }
+    get getRaza() {
+        return this._raza;
+    }
+    set setRaza(nuevaRaza) {
+        this._raza = nuevaRaza;
+    }
+}
+
+const conejo = new Animal("Bunny", "Macho");
+const snoopy = new Perro("Snoopy", "Masculino", "Chico");
+
+conejo.sonido();
+conejo.saludar();
+snoopy.saludar();
+snoopy.ladrar();
+Perro.estatico("Hola");
+snoopy.setRaza = "Criollo";
+console.log(snoopy.getRaza); // getRaza se ejecuta sin parentesis por ser una propiedad*/
+
+/*class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    obtenerEdad() {
+        return this.edad;
+    }
+    get getObtenerNombre() { // No estas obligado a tener un setter
+        return this.nombre;
+    }
+}
+
+const persona1 = new Persona("Pedro", 56);
+
+console.log(persona1.obtenerEdad());
+console.log(persona1.getObtenerNombre);
+persona1.getObtenerNombre = "Juan";
+console.log(persona1.getObtenerNombre);
+persona1.nombre = "Ricardo";
+console.log(persona1.nombre);*/
+
+// El verdadero proposito de una getter es permitir un acceso controlado a una propiedad.
+// Esto significa que puedes realizar validaciones, calculos u otras acciones cada vez que alguien intente acceder a la propiedad.
+
+class Animal {
+    constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+        this.raza = null;
+    }
+    sonido() {
+        console.log("Hago sonidos porque estoy vivo");
+    }
+    saludar() {
+        console.log(`Hola, me llamo ${this.nombre}`);
+    }
+}
+
+class Perro extends Animal {
+    constructor(nombre, genero, tamanio) {
+        super(nombre, genero);
+        this.tamanio = tamanio || "El tamanio no importa";
+    }
+    saludar() {
+        console.log("Sobreescribiendo la clase");
+    }
+    ladrar() {
+        console.log("Wuau wuau");
+    }
+    static estatico(param) {
+        console.log(param);
+    }
+    get getRaza() {
+        return this._raza;
+    }
+    set setRaza(nuevaRaza) {
+        this._raza = nuevaRaza;
+    }
+}
+
+const conejo = new Animal("Bunny", "Macho");
+const scooby = new Perro("Scooby", "Masculino");
+
+conejo.sonido();
+conejo.saludar();
+scooby.saludar();
+scooby.ladrar();
+Perro.estatico("Hola");
+console.log(scooby.tamanio);
+scooby.setRaza = "Gran danes";
+console.log(scooby.getRaza);
