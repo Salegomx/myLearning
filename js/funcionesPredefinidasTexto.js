@@ -100,3 +100,77 @@ console.log(++numero);*/
 /*for(let i = 0; i <= 100; i += 5) {
     console.log(i);
 }*/
+
+/*let string = "20.1";
+console.log(typeof Number.parseInt(string)); - para enteros
+console.log(typeof Number.parseFloat(string)); // number */
+
+/*let nulo = null;
+console.log(typeof nulo);
+
+Originalmente, en JS, typeof null devolvia "object", lo cual era incorrecto. Este fue un error en la implementación inicial de JS en los navegadores de netscape y fue replicado en otras implementaciones para mantener compatibilidad.
+Sin embargo esto se considera un error de diseño de JS y no es representativo de como se trata a null en el lenguaje. En realidad null es un valor primitivo de JS y no un objeto, la funcion typeof null ahora devuele object por razones de compatibilidad con versiones anteriores, pero en terminos precisos null es un tipo de dato primitivo y no un objeto.
+
+*/
+
+/*let variable = null;
+if (variable === null) {
+    console.log("null es un null"); // este es verdadero
+} else {
+    console.log("null es otro tipo de dato que no es null");
+}*/
+
+/*let variable = new String(2);
+console.log(typeof variable);
+
+let variable2 = new Boolean("true");
+let variable3 = new Array(5);
+let variable4 = new Number("45");
+
+console.log(variable2.valueOf());
+console.log(variable3.valueOf()); */
+
+/*let variable4 = new Number("45");
+let variable4Primitivo = +variable4;
+
+console.log(typeof variable4);*/
+
+/*
+
+Cohercion implicita:
+La cohercion implicita en JS es el proceso mediante el cual el motor de JS convierte automaticamente un valor de un tipo de dato a otro en ciertas operaciones. Esto occure cuando se intenta realizar una operacion entre valores de tipos distintos. JS intenta hacer que los tips de datos sean compatibles para realizar la operacion.
+Por ejemplo: en una operacion aritmetica como la suma si uno de los operandos es un string y el otro es un numero JS realizara una cohercion implicita convirtiendo el string en un numero antes de realizar la suma.
+
+Ejemplo:
+
+let numero = 10;
+let texto = "20";
+let resutlado = texto + numero;
+
+console.log(resutlado);*/
+
+/*let autentificar = true;
+if(autentificar) {
+   console.log("Puedes entrar");
+} else {
+    console.log("No tienes acceso");
+}*/
+
+/*let autentificar = true;
+
+let acceso = autentificar ? "Tienes accesso" : "No tienes acceso";
+
+console.log(acceso);*/
+
+let producto = {
+    nombre: "Coca-cola",
+    precio: 45,
+    presentacion: "3L"
+}
+
+let {nombre, precio, presentacion, color} = producto;
+
+console.log(presentacion);
+console.log(color.toUpperCase());
+
+// Destructuring ademas de extraer el valor crea una variable
