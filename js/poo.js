@@ -386,7 +386,7 @@ console.log(persona1.nombre);*/
 // El verdadero proposito de una getter es permitir un acceso controlado a una propiedad.
 // Esto significa que puedes realizar validaciones, calculos u otras acciones cada vez que alguien intente acceder a la propiedad.
 
-class Animal {
+/*class Animal {
     constructor(nombre, genero) {
         this.nombre = nombre;
         this.genero = genero;
@@ -432,4 +432,4 @@ scooby.ladrar();
 Perro.estatico("Hola");
 console.log(scooby.tamanio);
 scooby.setRaza = "Gran danes";
-console.log(scooby.getRaza);
+console.log(scooby.getRaza);*/

@@ -1,26 +1,25 @@
-body {
-    display: flex;
-    justify-content: center;
-    padding: 25px 20px;
-    background-color: #f5f5e9;
-    color: #222;
-    font-family: sans-serif;
+/* Browser styles reset*/
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
+/* General styles*/
+body {
+    font-family: sans-serif;
+    color: #222;
+    background-color: #f5f5e9;
+}
 #content {
     max-width: 1020px;
+    margin-inline: auto;
 }
-
-h1 {
+.title {
     font-size: 1.8em;
     font-family: 'Times New Roman', Times, serif;
+    color: #222;
 }
-
-h2 {
+.subtitle {
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
-}
-
-.title {
-    color: #222;
 }
