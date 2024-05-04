@@ -65,6 +65,7 @@ else {
 
 console.log(operacion(2, 5));*/
 
+
 // Investigar funciones flecha, callbacks, como resumir el codigo de una funcion flecha.
 
 // Ejercicio de funcion de suma con funcion flecha reduciendo el codigo
@@ -299,3 +300,90 @@ console.log(persona.varios());*/
 }
 
 console.log(objeto.nombreYApellido(5));*/
+
+//Ejercicio donde imprimimos las calificaciones usando la propiedad length
+
+/*let alumno = [
+    [5, 6, 2, 8, 3],
+    [8, 9, 10, 5, 7],
+    [3, 5, 8, 7, 8],
+    [10, 9, 8, 10, 10],
+    [6, 7, 9, 8, 9]
+];
+
+for (let i = 0; i < alumno.length; i++) {
+    for (let j = 0; j < alumno[i].length; j++) {
+        console.log(alumno[i][j]);
+    }
+};*/
+
+// Reprobado o aprobado segun calificacion
+
+/*let calificaciones = [
+    [5, 6, 2, 8, 3],
+    [8, 9, 10, 5, 7],
+    [3, 5, 8, 7, 8],
+    [10, 9, 8, 10, 10],
+    [6, 7, 9, 8, 9]
+];
+
+for (let i = 0; i < calificaciones.length; i++) {
+    for (let j = 0; j < calificaciones[i].length; j++) {
+        if (calificaciones[i][j] < 6) {
+            console.log(calificaciones[i][j] + " Reprobado");
+        }
+        else {
+            console.log(calificaciones[i][j] + " Aprobado");
+        }
+    }
+}*/
+
+// Promediando calificaciones
+
+/*let array = [
+    [8, 10, 9, 8, 8],
+    [7, 8, 9, 9, 7],
+    [5, 7, 9, 8, 9],   
+    [10, 9, 8, 9, 9],
+    [5, 9, 8, 6, 8]
+];
+
+let suma = 0;
+let materias = 0;
+
+for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+        suma = suma + array[i][j];
+        materias++;
+    }
+}
+
+// Promedio =
+console.log(suma / materias);*/
+
+// Imprimir cuantas materias reprobo el alumno y despues imrpimir "reprobaste n materias"
+
+/* let calificaciones = [
+    [8, 10, 9, 8, 8],
+    [7, 8, 5, 9, 7],
+    [5, 7, 9, 6, 9],   
+    [10, 9, 8, 9, 5],
+    [5, 5, 8, 6, 8]
+]; 
+
+let reprobadas = [];
+
+for (let i = 0; i < calificaciones.length; i++) {
+    for (let j = 0; j < calificaciones[i].length; j++) {
+        if (calificaciones[i][j] < 6) {
+            reprobadas.push("calificaciones[" + i +"]" + "[" + j + "]")
+        }
+    }
+}
+
+console.log("Reprobaste " + reprobadas.length + " materias");
+console.log("Las posiciones en el array de tus materias reprobadas son: ");
+
+for (let i = 0; i < reprobadas.length; i++) {
+    console.log(reprobadas[i]);
+}*/

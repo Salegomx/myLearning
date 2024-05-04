@@ -42,8 +42,32 @@ console.log('2' > false); // true
 console.log('2' > true); // true
 console.log('0' > true); // false*/
 
-let i = 5;
+/*let i = 5;
 console.log(i += 10);
 
 let j = 20;
-console.log(j -= 10);
+console.log(j -= 10);*/
+
+// Ejercicio con operador !==
+
+/* let uno = 1;
+let numero = 1;
+
+if (uno !== numero) {
+    console.log("Los numeros son DIFERENTES en valor o tipo");
+}
+else {
+    console.log("Los numeros son IGUALES en valor y en tipo");
+}*/
+
+// Ejercicio con operador !=
+
+/* let numeroUno = 6;
+let numeroDos = "6";
+
+if (numeroUno != numeroDos) {
+    console.log("Los numeros son DIFERENTES en valor (sin considerar el tipo de dato)");
+}
+else {
+    console.log("Los numeros son IGUALES en valor (sin considerar el tipo de dato)");
+} */

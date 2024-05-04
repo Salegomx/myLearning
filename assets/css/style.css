@@ -9,17 +9,26 @@ body {
     font-family: sans-serif;
     color: #222;
     background-color: #f5f5e9;
+    line-height: 1.25;
 }
-#content {
+.container {
     max-width: 1020px;
     margin-inline: auto;
+    padding-block: 1.5rem;
 }
 .title {
-    font-size: 1.8em;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 1.75em;
     color: #222;
 }
 .subtitle {
-    font-style: italic;
     font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+.title, .subtitle {
+    display: block;
+    margin-block: 1rem;
+}
+ul {
+   list-style: inside; 
 }

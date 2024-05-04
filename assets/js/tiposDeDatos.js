@@ -1,3 +1,14 @@
+/* Diferencia entre var y let
+var puede sobrescribir palabras del lenguaje de javascript
+
+alert("Hola mundo"); 
+
+let saludar = "Hola mundo";
+
+var alert = "Hola mundo";
+
+alert("Hello world"); */
+
 // True = true = 1; false = false = 0
 // 0 !== nada
 // null !== undefined
@@ -135,7 +146,7 @@ console.log(saludar());*/
 
 // Estudiar callbacks y estudiar ejercicos de console.log
 
-console.log(undefined + 'hola'); // undefinedhola
+/*console.log(undefined + 'hola'); // undefinedhola
 
 console.log(undefined * 'hola'); // NaN
 
@@ -203,5 +214,10 @@ console.log({} + 'hola'); // [object Object]hola
 
 console.log({} * 'hola'); // NaN
 
-console.log({} + 2); // [object Object]2
+console.log({} + 2); // [object Object]2*/
 
+/*'use strict'
+
+let x = 20;
+
+console.log(x)*/

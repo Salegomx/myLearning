@@ -1,3 +1,8 @@
+// Ejercicio parametros  rest - spread
+/*let numeros = [1, 2, 3, 4, 5];
+
+console.log(...numeros); */
+
 /*let numeros = [1, 2, 3, 4, 5];
 let paises = ['China', 'Japon', 'Mexico', 'Canada', 'Korea']
 
