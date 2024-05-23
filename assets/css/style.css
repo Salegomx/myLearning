@@ -32,3 +32,15 @@ body {
 ul {
    list-style: inside; 
 }
+#divUno,
+#divDos{
+    background-color: #ccc;
+    padding: 50px;
+}
+#parrafoUno,
+#parrafoDos {
+    font-size: 20px;
+    padding: 20px;
+    background-color: darkblue;
+    color: #fff;
+}
