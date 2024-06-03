@@ -119,7 +119,7 @@ obtenerPost('Pedro', (post) => {
     console.log(post)
 })*/
 
-document.getElementById('divUno').addEventListener('click', () => {
+/*document.getElementById('divUno').addEventListener('click', () => {
     alert('Has clickeado el div uno');
 }, false)
 
@@ -133,4 +133,134 @@ document.getElementById('parrafoUno').addEventListener('click', () => {
 
 document.getElementById('parrafoDos').addEventListener('click', () => {
     alert('Has clickeado el parrafo dos');
-}, true)
+}, true)*/
+
+//let nombres = ["pepe", "Marcelo", "Antonio", "Luis"];
+
+/*nombres.forEach((nombre) =>{
+    console.log(nombre);
+});*/
+
+/*function forSergio(callback) {
+    for (let i = 0; i < .lenght; i++) {
+        callback()
+    }
+}*/
+
+/*const bucleSergio = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+        const elemento = array[i];
+        callback(elemento);
+    }
+}
+
+bucleSergio(nombres, (nombre) => {
+    console.log(nombre)
+})*/
+
+/*const miPropioForEach = (array,callback) =>{
+    for (let i= 0; i < array.length; i++) {
+      const element = array[i];
+      callback(element);
+    }
+  }*/
+
+/*miPropioForEach(nombres,(nombre)=>{
+    console.log(nombre)
+  })*/
+
+/*Tarea: 
+  que hace el codigo?
+*/
+  /*const tareaSimple = (tarea) => console.log(tarea);
+
+    const tareaPesada = (tarea) =>{
+        console.log(`Empezando tarea ${tarea}...`)
+        //el for solo es para que calcule y se tarde mucho
+        for (let i = 0; i < 100000000; i++) {
+            Math.random() - Math.random() * Math.random();
+        }
+        console.log(`Tarea ${tarea} terminada`);
+    }
+
+    const tareaFulanito = (tarea,callback,tiempo) =>{
+        console.log(tarea);
+        setTimeout(callback, tiempo);
+    }
+
+    const laboresYoutuber = [
+        () => tareaSimple("escribir un guión"),
+        () => tareaFulanito("hacer una imagen miniatura para el video",()=>tareaSimple("revisar miniatura"),3000),
+        () => tareaPesada("grabar el vídeo"),
+        () => tareaFulanito("Editar el vídeo",()=>tareaSimple("revisar el vídeo"),5000)
+    ];
+
+    for (const labor of laboresYoutuber) {
+        labor()
+    }*/
+
+
+/*
+    escribir un guión
+    hacer una imagen miniatura para el video
+    Empezando tarea grabar el video
+    Tarea grabar el video terminada
+    Editar el video
+    revisar miniatura
+    revisar el video
+*/
+
+// Un call back que reciba dos valores y uno de los valores sea mi nombre
+
+/*let obtenerDatos = (nombre, callback) => {
+    callback(nombre);
+}
+
+obtenerDatos('Sergio', (nombre) => {
+    console.log(`Obteniendo datos de ${nombre}`)
+})*/
+
+// Tarea: crear cuenta de codewars
+
+// Funcion map (recibe hasta 4 parametros) elemento, indice, array original
+// Crea un nuevo array con los resultados de la funcion pasada como parametro
+
+/*let numeros = [5, 20, 2024, 25, 42];
+
+const multiplicacion = numeros.map((numero)=>{
+    return numero * 2;
+});
+
+console.log(multiplicacion);*/
+
+/*let numeros = [5, 20, 2024, 25, 42];
+
+const multiplicacion = numeros.map((numero, indice)=>{
+    console.log('Elemento: ', numero);
+    console.log('Indice: ', indice);
+    //console.log('Array: ', array);
+
+    return numero * 2;
+});
+
+console.log(multiplicacion);*/
+
+/*let multiplicador = {factor: 3};
+let numeros = [5, 20, 2024, 25, 42];
+
+const resultado = numeros.map(function (numero) {
+    //console.log(this)
+    return numero * this.factor;
+}, multiplicador);
+
+console.log(resultado);*/
+
+// funcion callback que sume dos digitos
+
+/*let sumador = (num1, num2, callback) => {
+    callback(num1, num2);
+}
+
+sumador(2, 4, (num1, num2) => {
+    console.log(num1 + num2);
+})*/

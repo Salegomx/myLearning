@@ -65,7 +65,6 @@ else {
 
 console.log(operacion(2, 5));*/
 
-
 // Investigar funciones flecha, callbacks, como resumir el codigo de una funcion flecha.
 
 // Ejercicio de funcion de suma con funcion flecha reduciendo el codigo
