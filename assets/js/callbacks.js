@@ -264,3 +264,180 @@ console.log(resultado);*/
 sumador(2, 4, (num1, num2) => {
     console.log(num1 + num2);
 })*/
+
+/*let imprimir = (nombre,callback) => {
+    callback(nombre);
+}
+
+imprimir('fulanito',(nombre)=>{
+    console.log(`Hola ${nombre}`);
+})*/
+
+/*let getUsers = () => {
+    setTimeout(() => {
+        let users = [{id:1,nombre:"Sergio"},{id:2,nombre:"ivan"}];
+        return users;
+    }, 500);
+}
+
+let users = getUsers();
+
+console.log('users: ', users )*/
+
+// Callbacks asincronos
+
+/*let getUsers = (callback) => {
+    setTimeout(() => {
+        let users = [{id:1,nombre:"Sergio"},{id:2,nombre:"ivan"}];
+        callback(users);
+    }, 500);
+}
+
+getUsers((users)=>{
+    console.log('users: ', users );
+});*/
+
+/*let parrafo = document.getElementById('resultado');
+
+let sumar = (num1, num2, callback) => {
+    let resultado = num1 + num2;
+    callback(resultado)
+}
+
+sumar(4, 5, (resultado)=>{
+    parrafo.textContent = resultado;
+});*/
+
+// Debe recibir objetos y funciones y recorrerlos
+// si no recibe un objeto o una funcion debe mostrar error
+// cada objeto o dato del objeto debe agregarse a un array
+
+/*let funcionCallback = (...params) => {
+    for(let i = 0; i < params.length; i++) {
+        if (typeof params[i] !== 'object') {
+            return console.log('No has pasado un objeto como parametro');
+        } else if (typeof params[i] !== 'function') {
+            return console.log('No has pasado una funcion como parametro');
+        } else {
+            console.log(params[i]);
+        }
+    }
+}
+
+funcionCallback({});*/
+
+/*let usuarios = [];
+
+let logeo = (data) => {
+    if ('strings' == typeof data) {
+        return console.log(data);
+    }
+    if ('object' == typeof data) {
+        for (const key in data) {
+            console.log(key + ': ' + data[key]);
+        }
+    }
+}
+
+let ingresar = (input, callback) => {
+    usuarios.push(input);
+    if ('function' == typeof callback) {
+        callback(input.nombre, input.tecnologia);
+    } else {
+        console.log('El dato ingresado no es una funcion')
+    }
+}
+
+ingresar({nombre: 'Sergio', tecnologia: 'Javascript'}, (nombre, tecnologia)=>{
+    console.log('nombre: ' + nombre, 'Tecnologia: ' + tecnologia);
+});*/
+
+/*let primeraOperacion = (callback) => {
+    setTimeout(() => {
+        console.log('Primera operacion completada');
+        callback();
+    }, 1000);
+}
+
+let segundaOperacion = (callback) => {
+    setTimeout(() => {
+        console.log('segunda operacion completada');
+        callback();
+    }, 1000);
+}
+
+let terceraOperacion = (callback) => {
+    setTimeout(() => {
+        console.log('tercera operacion completada');
+        callback();
+    }, 1000);
+}
+
+primeraOperacion(()=>{
+    segundaOperacion(()=> {
+        terceraOperacion(()=>{
+            console.log('Todas las operaciones han sido completadas')
+        });
+    })
+});*/
+
+/*let operaciones = (callback, time) => {
+    return new Promise((resolve)=>{
+        resolve(()=>{
+            setTimeout(() => {
+                callback()
+            }, time);
+        })
+    })
+}
+
+operaciones(()=>{
+    console.log('Primera operacion completada')
+}, 1000)
+
+    .then(()=>{
+        console.log('Segunda operacion completada')
+    }, 1000)
+
+    .then(()=>{
+        console.log('Tercera operacion completada')
+    }, 1000)
+
+    .finally(()=>{
+        console.log('Todas las operaciones se han completado')
+    }, 0);*/
+
+let primeraOperacion = () => {
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            console.log('Primera operacion completada')
+            resolve();
+        }, 1000);
+    })
+}
+
+let segundaOperacion = () => {
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            console.log('segunda operacion completada')
+            resolve();
+        }, 1000);
+    })
+}
+
+let terceraOperacion = () => {
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            console.log('tercera operacion completada')
+            resolve();
+        }, 1000);
+    })
+}
+
+primeraOperacion()
+
+    .then(()=>segundaOperacion())
+
+    .then(()=>terceraOperacion())
+
+    .then(()=>console.log('todas las operaciones fueron completadas'))
