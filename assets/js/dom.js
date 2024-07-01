@@ -77,3 +77,37 @@ nuevaVentana.open();*/
 // console.log(document.querySelectorAll('.card:nth-child(3)')); Imprime un NodeList que contiene al tercer elemento figure con la clase card
 
 // console.log(document.documentElement.lang); Obteniendo el valor de el atributo lang del html
+
+// Usando callbacks para interactuar con el DOM
+
+/*let send = document.querySelector('#enviar').addEventListener('click', () => {
+    let num1 = parseInt(document.querySelector('#inputUno').value);
+    let num2 = parseInt(document.querySelector('#inputDos').value);
+
+    sumar(num1, num2, () => console.log(num1 + num2))
+    }
+);
+
+function sumar (num1, num2, callback) {
+    callback(num1, num2);
+}*/
+
+// cambiando color de un boton de dos formas diferentes
+
+/*let boton = document.querySelector('.botonClick');
+
+setTimeout(() => {
+    boton.classList.add('botonClickRojo');
+}, 1000);
+
+function toggle () {
+    boton.classList.toggle('botonClickRojo')
+}
+
+toggle();*/
+
+/*let boton = document.querySelector('.botonClick');
+
+boton.addEventListener('click', () => {
+    boton.classList.add('botonClickRojo');
+})*/

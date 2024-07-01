@@ -407,7 +407,7 @@ operaciones(()=>{
         console.log('Todas las operaciones se han completado')
     }, 0);*/
 
-let primeraOperacion = () => {
+/*let primeraOperacion = () => {
     return new Promise((resolve)=>{
         setTimeout(() => {
             console.log('Primera operacion completada')
@@ -441,3 +441,32 @@ primeraOperacion()
     .then(()=>terceraOperacion())
 
     .then(()=>console.log('todas las operaciones fueron completadas'))
+*/
+// Codigo a arreglar:
+
+/*function firstAction() {
+    console.log("I'm the first action")
+    setTimeout(callback,5000)
+  }
+  
+  function secondAction() {
+    console.log("I'm the second action")
+  }
+  
+  setTimeout(,3000);*/
+
+// Codigo arreglado:
+
+/*function firstAction(callback) {
+    setTimeout(()=> {
+        console.log("I'm the first action")
+        callback()
+    },5000)
+    
+}
+    
+function secondAction() {
+    setTimeout(()=>console.log("I'm the second action"),3000);
+}
+    
+firstAction(secondAction);*/

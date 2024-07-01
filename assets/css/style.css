@@ -44,3 +44,9 @@ ul {
     background-color: darkblue;
     color: #fff;
 }
+.botonClick {
+    background-color: lightcoral;
+}
+.botonClick.botonClickRojo {
+    background-color: darkred;
+}
