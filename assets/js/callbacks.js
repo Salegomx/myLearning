@@ -470,3 +470,53 @@ function secondAction() {
 }
     
 firstAction(secondAction);*/
+
+function firstAction (callback, mensaje, anotherCallback) {
+    console.log(mensaje);
+    callback();
+    setTimeout(() => {
+       anotherCallback()
+    }, 3000);
+}
+
+function secondAction (mensaje) {
+    console.log(mensaje);
+}
+
+function thirdAction (mensaje) {
+    console.log(mensaje)
+}
+
+/*setTimeout(() => {
+   firstAction(secondAction('Soy el segundo mensaje'),'Soy el primer dato'); 
+}, 5000);*/
+
+// Forma 1 de ejecutarse
+
+/*setTimeout(() => {firstAction( () => secondAction('Soy el segundo dato'), 'Soy el primer dato' ) }, 3000);*/
+
+// Forma 2 de ejecutarse
+
+/*setTimeout(() => {
+   firstAction( () => {
+        secondAction('Soy el segundo dato')
+    }, 'Soy el primer dato')
+}, 3000);*/
+
+// Forma 3 de ejecutarse
+
+/*setTimeout(() => {
+   firstAction( () => secondAction('Soy el segundo dato'), 'Soy el primer dato' ) 
+}, 3000);*/
+
+// Forma 4 de ejecutarse
+
+/*setTimeout( firstAction( () => secondAction('Soy el texto 2'), 'Soy el texto 1' ), 3000);*/
+
+/*setTimeout( () => {
+    firstAction( () => {
+        secondAction('Soy el segundo dato')
+    }, 'Soy el primer dato', () => {
+        thirdAction('Soy el tercer dato')
+    })
+}, 3000);*/
