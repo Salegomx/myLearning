@@ -126,3 +126,78 @@ asincroniaConCallback(5, 23, (resultado) => {
 
 asincroniaConPromesa(5, 23)
     .then(resultado => console.log(resultado))*/
+
+// Callback hell vs promesas:
+
+/*const posts = [
+    {
+        userID: 1,
+        id: 1,
+        title: 'lorem ipsum 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dolorem facere rerum doloribus architecto soluta molestiae doloremque, dignissimos saepe eaque ea eum vero cupiditate sed esse voluptates officia ut perspiciatis?'
+    },
+    {
+        userID: 1,
+        id: 2,
+        title: 'lorem ipsum 2',
+        body: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non nemo, debitis aspernatur sed minus eaque repellendus velit, placeat aut sequi optio nam dolorum laborum minima, dolore reprehenderit odio eos? Culpa!'
+    },
+    {
+        userID: 1,
+        id: 3,
+        title: 'lorem ipsum 3',
+        body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore aspernatur eligendi doloremque at eius, ex asperiores repellat omnis reprehenderit, sed, facere ea dolores quos quis quo ad sequi aliquam vel!'
+    }
+];*/
+
+/*const encontrarPostPorId = (id, callback) => {
+    const post = posts.find( item => item.id === id );
+    if (post) {
+        callback(null, post);
+    } else {
+        callback('El ID ' + id + ' no existe');
+    }
+}*/
+
+// Ejemplo de ejecucion con callback hell:
+
+/*encontrarPostPorId( 1, (error, post) => {
+    if (error) return console.log(error);
+    console.log(post);
+    encontrarPostPorId(2, (error, post) => {
+        if (error) return console.log(error);
+        console.log(post);
+        encontrarPostPorId(3, (error, post) => {
+            if (error) return console.log(error);
+            console.log(post);
+            encontrarPostPorId(4, (error, post) => {
+                if (error) return console.log(error);
+                console.log(post);
+            })
+        })
+    })
+})*/
+
+// Ejemplo de ejecucion con promesas:
+
+/*const findPostById = (id) => {
+    const post = posts.find( item => item.id === id);
+    return new Promise((resolve, reject) => {
+        if (post) {
+            resolve( post )
+        } else {
+            reject('El post con el ID: ' + id + ' no se ha encontrado')
+        }
+    })
+}
+
+findPostById(1)
+    .then((post) => {
+        console.log(post);
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        console.log('Termina el programa')
+    })*/
