@@ -234,7 +234,7 @@ ejercicioParametros(5, {}, (error, post) => {
 // La tercer razon es legibilidad y claridad. Se puede entender rapidamente la estructura de los callback y como se manejan los errores una vez que se acostumbra.
 // La cuarta razon es por compatibilidad con librerias y frameworks, especialmente en NodeJS esperan que los callback sigan estan convencion. Esto garantiza que lass funciones tenga mucha compatibilidad.
 
-/*const posts = [
+const posts = [
     {
         userID: 1,
         id: 1,
@@ -253,7 +253,7 @@ ejercicioParametros(5, {}, (error, post) => {
         title: 'lorem ipsum 3',
         body: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore aspernatur eligendi doloremque at eius, ex asperiores repellat omnis reprehenderit, sed, facere ea dolores quos quis quo ad sequi aliquam vel!'
     }
-];*/
+];
 
 /*const encontrarPostPorId = (id, callback) => {
     const post = posts.find( item => item.id === id );
@@ -283,26 +283,128 @@ ejercicioParametros(5, {}, (error, post) => {
     })
 })*/
 
-// Ejemplo de ejecucion con promesas:
+// Ejemplo de ejecucion con promesas (refactorizando el codigo):
 
-/*const findPostById = (id) => {
-    const post = posts.find( item => item.id === id);
-    return new Promise((resolve, reject) => {
-        if (post) {
-            resolve( post )
-        } else {
-            reject('El post con el ID: ' + id + ' no se ha encontrado')
-        }
-    })
-}
-
+/*const findPostById = (postId) => new Promise((resolve, reject) => {
+    const post = posts.find( item => item.id === postId);
+    if (post) {
+        resolve( post )
+    } else {
+        reject('El post con el ID: ' + postId + ' no se ha encontrado')
+    }
+})
+    
 findPostById(1)
     .then((post) => {
-        console.log(post);
+        console.log(post)
     })
     .catch((error) => {
         console.error(error);
     })
     .finally(() => {
         console.log('Termina el programa')
+    });
+
+findPostById(2)
+    .then((post) => {
+        console.log(post)
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        console.log('Termina el programa')
+    });
+
+findPostById(3)
+    .then((post) => {
+        console.log(post)
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        console.log('Termina el programa')
+    });
+
+findPostById(4)
+    .then((post) => {
+        console.log(post)
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        console.log('Termina el programa')
+    });*/
+
+// Promise Hell:
+
+/*const findPostById = (postId) => new Promise((resolve, reject) => {
+    const post = posts.find( item => item.id === postId);
+    if (post) {
+        resolve( post )
+    } else {
+        reject('El post con el ID: ' + postId + ' no se ha encontrado')
+    }
+})
+
+findPostById(1)
+    .then((post) => {
+        console.log(post)
+        return findPostById(2)
+    })
+    .then((post) => {
+        console.log(post)
+        return findPostById(3)
+    })
+    .then((post) => {
+        console.log(post)
+        return findPostById(4)
+    })
+    .catch((error) => {
+        console.log(error)
     })*/
+
+// Debe imprimir cuadrados cada 3 segundos causando un callback hell
+/*function miFuncion(number, callback, callback2) {
+    // Debe elevar al cuadrado el numero del primer parametro despues de 3 segundos
+    setTimeout(() => {
+        callback(number);
+        if (!callback2) return
+        callback2();
+    }, 3000);
+}
+
+function elevarNumero(number) {
+    console.log( number * number );
+}
+
+miFuncion(4, elevarNumero, () => {
+    miFuncion(5, elevarNumero, () => {
+        miFuncion(3, elevarNumero, () => {
+            miFuncion(7, elevarNumero, null)
+        })
+    })
+})*/
+
+/*function cuadradoCallback(value, callback) {
+    setTimeout(() => {
+        callback(value, value * value)
+    }, 3000);
+}
+
+cuadradoCallback(4, (value, resultado) => {
+    console.log('Inicia callback');
+    console.log(`Valor: ${resultado}`)
+    cuadradoCallback(5, (value, resultado) => {
+        console.log(`Valor: ${resultado}`);
+        cuadradoCallback(6, (value, resultado) => {
+            console.log(`Valor: ${resultado}`);
+            cuadradoCallback(7, (value, resultado) => {
+                console.log(`Valor: ${resultado}`);
+                console.log('Termina callback');
+            })
+        })
+    })
+})*/
