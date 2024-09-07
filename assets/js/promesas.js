@@ -88,7 +88,7 @@ primeraOperacion()
 // Una promesa en JS es un objeto que representa una la resolucion o rechazo de una operacion.
 // Las promesas son una forma de manejar operaciones asincronas en JS de manera mas legible, evitando problemas como el callback hell
 
-// Estados de la promesa: Pending: la oeracion no se ha completado. Fulfillled: Cumplida. Reject: Rechazada.
+// Estados de la promesa: Pending: la operacion no se ha completado. Fulfillled: Cumplida. Reject: Rechazada.
 
 //Metodos principales: then() registra callbacks para manejar los casos en que la promesa se cumple o se rechaza. catch(): registra un callback cuando la promesa se rechaza. finally(): Se ejecuta al final de la promesa sin importar el resultado.
 
@@ -201,3 +201,44 @@ findPostById(1)
     .finally(() => {
         console.log('Termina el programa')
     })*/
+
+// Crear una promesa que imprima la raiz cuadrada de un numero, despues de 3 segundos debe imprimir el primer numero y despues su raiz cuadrada, despues de tres segundos se imprime otro numero y su raiz y despues de tres segundos otra vez
+
+const raizCuadrada = value => new Promise(resolve => setTimeout(() => {
+        resolve( {
+                value,
+                result: value * value 
+            }
+        );
+    }, 3000)
+)
+
+
+/*raizCuadrada(5)
+    .then((raiz) => {
+        console.log(raiz)
+    })
+    .then(() => {
+        raizCuadrada(3)
+        
+            .then(((raiz) => {
+                console.log(raiz)
+            }))
+    })*/
+
+raizCuadrada(2)
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada(3)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada('Hola mundo')
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada(5)
+    })
+    .catch(() => {
+        console.log('Error!');
+    })

@@ -50,6 +50,87 @@
                 <li><strong>git config --global user.name fulanito</strong> - para cambiar el nombre</li>
                 <li><strong>git config --global user.email fulanito@gmail.com</strong> - para cambiar el email</li>
             </ul>
+        <br>
+            <h2 class="subtitle">Preguntas de examen: Que es JS:</h2>
+            <p>
+                JS es un lenguaje de alto nivel:
+                <span>Es un tipo de lenguaje de programación que esta diseñado para ser facil de leer y escribir para los humanos. Tienen una sintaxis más alejada del hardware y mas cercana al lenguaje humano.</span>
+            </p>
+            <p>
+                var, let y const:
+                Var tiene un alcanze de funcion, let y const tienen un alcanze de bloque. La diferencia entre let y const, es que let permite la reasignación, mientras que const crea una referencia de solo lectura.
+            </p>
+            <p>Scopes:
+                Hay tres tipos: Global, de funcion y de bloque.
+            </p>
+            <p>IIFE: Immediately invoke function expression: funciones anonimas autinvocadas. Es un patron de diseño que comunmente se utiliza oara crear un nuevo ambito, aislar variables y evitar contaminar el espacio de nombres globales</p>
+            <p>Para que se usa: Evita contaminar los nombres, crea un ambito privado, lo que eviat que las variables y funciones se filtren al ambito Global
+                <br>La segunda es el aislamiento, puede aislar el codigo dentro de la funcion autoinvocada para evitar confilctos con otras partes de la app
+                <br>Privacidad de datos: las variables no son accesibles desde el exterior, ayuda a proteger los datos.
+                <br>Se usan a menudo para crear un contexto de ejecucion para el codigo que se necesita ejecutar inmediatamente
+            </p>
+            <p>THIS: Es un aputador (respuesta facil). Es un valor especial que se refiere al contexto en el que se esta ejecutando una funcion. El valor de this puede cambiar dependiendo de como y de donde se use. En el contexto global, this apunta al objeto window.</p>
+            <p>Un closure es una funcion que tiene acceso al ambito de su funcion externa</p>
+            <p>
+                null: se espera que tenga un valor en el futuro, pero esta vacio INTENCIONALMENTE (es asignado por el programador).
+                undefined: Variables declaradas, pero no inicializadas (lo asigna JS).
+            </p>
+            <p>
+                El metodo filter se usa para retornar un nuevo array con todos los elementos que cumplan una condicion especifica. Se usan cuando necesitar obtener una coleccion de elementos de un array. Obtienes solo aquellos elementos que cumplen cierto criterio.
+                forEach y map: map SIEMPRE regresa un nuevo array con los resultados de la trnaformacion, no modifica el array original. 
+            </p>
+            <p>
+                Tipos de datos por referencia: object, array, function, set y map.
+                Tipos de estructuras de datos: map y set, se comportan como objetos y permiten almacenar collecciones de datos
+            </p>
+
+            <!-- reduce, map (diferencia) -->
+            <!-- 
+            -->
+
+
+            <!--script>
+                //Ejemplo de closure:
+                /*function externa() {
+                    let variableExterna = "soy la variable externa";
+
+                    function interna() {
+                        console.log(variableExterna)
+                    }
+                    //si comento el return, me debe arrojar undifined, por el return implicito
+                    return interna;
+                }
+
+                const closure = externa();
+                console.log(typeof closure)
+                closure()*/
+
+                // VAR
+
+                var saludar = 'Hola mundo';
+                let saludar1 = 'Hello world';
+
+                console.log(window);
+
+                (function() {
+                    console.log('Hola mundo');
+                })();
+
+                // Usada por facebook
+                !function() {
+                    console.log('Hola mundo');
+                }();
+
+                // Unaria
+                +function() {
+                    console.log('Hola mundo');
+                }();
+
+                // Function anonima autoejecutable crocford
+                (function() {
+                    console.log('Hola mundo');
+                }());
+            </script-->
 
             <button id="btn">Click!</button>
             <button id="fecha">Fecha</button>
@@ -91,6 +172,6 @@
 
         <p id="resultado">Aqui va a aparecer el resultado</p>
     </main>
-    <script src="/assets/js/recursividad.js"></script>
+    <script src="/assets/js/arrays.js"></script>
 </body>
 </html>

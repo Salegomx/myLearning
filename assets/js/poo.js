@@ -433,3 +433,58 @@ Perro.estatico("Hola");
 console.log(scooby.tamanio);
 scooby.setRaza = "Gran danes";
 console.log(scooby.getRaza);*/
+
+/*function Animal (nombre, genero) {
+    this.nombre = nombre;
+    this.animal = genero;
+}
+
+Animal.prototype.sonar = function () {
+    console.log('Hago sonidos porque estoy vivo');
+}
+
+Animal.prototype.saludar = function () {
+    console.log(`Hola me llamo ${this.nombre}`)
+}
+
+function Perro (nombre, genero, tamanio) {
+    this.super = Animal;
+    this.super(nombre, genero);
+    this.tamanio = tamanio;
+}
+
+Perro.prototype = new Animal();*/
+
+// Buneas practicas en POO
+/*function Animal (nombre, genero) {
+    this.nombre = nombre;
+    this.animal = genero;
+}
+
+Animal.prototype.sonar = function () {
+    console.log('Hago sonidos porque estoy vivo');
+}
+
+Animal.prototype.saludar = function () {
+    console.log(`Hola me llamo ${this.nombre}`)
+}
+
+function Perro (nombre, genero, tamanio) {
+    // Es la llamada correcta al constructor padre (Animal)
+    Animal.call(this, nombre, genero); // El metodo call se utiliza para llamar una funcion y especificar el valor de this al mimso tiempo.
+    this.tamanio = tamanio;
+}
+
+// Establece la herencia correcta
+Perro.prototype = Object.create(Animal.prototype);
+
+// Asegura que el constructor apunte a Perro
+Perro.prototype.constructor = Perro;
+
+let miPerro = new Perro('Snoopy', 'Macho', 'Mediano');
+
+miPerro.sonar();
+miPerro.saludar();
+
+console.log(miPerro.constructor === Animal);
+console.log(miPerro.constructor === Perro);*/
