@@ -204,16 +204,6 @@ findPostById(1)
 
 // Crear una promesa que imprima la raiz cuadrada de un numero, despues de 3 segundos debe imprimir el primer numero y despues su raiz cuadrada, despues de tres segundos se imprime otro numero y su raiz y despues de tres segundos otra vez
 
-const raizCuadrada = value => new Promise(resolve => setTimeout(() => {
-        resolve( {
-                value,
-                result: value * value 
-            }
-        );
-    }, 3000)
-)
-
-
 /*raizCuadrada(5)
     .then((raiz) => {
         console.log(raiz)
@@ -226,19 +216,56 @@ const raizCuadrada = value => new Promise(resolve => setTimeout(() => {
             }))
     })*/
 
-raizCuadrada(2)
+/*const raizCuadrada = value => new Promise(resolve => setTimeout(() => {
+    resolve( {
+            value,
+            result: value * value 
+            }
+        );
+    }, 3000)
+)*/
+
+const raizCuadrada = value => {
+    if (typeof value !== 'number') {
+        return Promise.reject('El dato DEBE ser un numero')
+    }
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve( {
+                    value,
+                    result: value * value 
+                }
+            )
+        }, 3000);
+    })
+}
+
+raizCuadrada(5)
     .then(obj => {
         console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
         return raizCuadrada(3)
     })
     .then(obj => {
         console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
-        return raizCuadrada('Hola mundo')
+        return raizCuadrada(4)
     })
     .then(obj => {
         console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
-        return raizCuadrada(5)
+        return raizCuadrada(15)
     })
-    .catch(() => {
-        console.log('Error!');
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada({})
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada(3)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada('')
+    })
+    .catch((mensaje) => {
+        console.log(mensaje);
     })
