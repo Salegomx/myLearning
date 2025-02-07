@@ -29,7 +29,7 @@ console.log(typeof dato2);*/
 
 // Buscar APIs de usd, euro, cop, mxn, uruguayo.
 
-(() => {
+/*(() => {
     const xhr = new XMLHttpRequest();
     $xhr = document.getElementById('xhr');
     $fragment = document.createDocumentFragment();
@@ -59,7 +59,7 @@ console.log(typeof dato2);*/
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
 
     xhr.send();
-})();
+})();*/
 
 // Estados de una peticion asincrona
 // 1 ready_state_uninitialized: 0
@@ -67,3 +67,31 @@ console.log(typeof dato2);*/
 // 3 ready_state_loaded: (cargado)
 // 4 ready_state_interactive: (JS ya empieza a interactuar porque ya tiene los datos)
 // 5 ready_state_complete
+
+
+let showCountries = ()=>{
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'https://restcountries.com/v3.1/all');
+
+    xhr.onload = function() {
+        if(xhr.status === 200) {
+           //console.log('Exito');
+           let paises = JSON.parse(this.response);
+            paises.forEach((pais)=>{
+                console.log(pais);
+                let countryCard = document.createElement('div');
+                let countryCardImg = document.createElement('img');
+
+                countryCard.innerHTML = pais.name.common;
+                countryCardImg.src = pais.flags.png;
+                countryCard.appendChild(countryCardImg);
+                document.getElementById('feed').appendChild(countryCard);
+            })
+        }
+    };
+
+    xhr.send();
+}
+
+showCountries();
