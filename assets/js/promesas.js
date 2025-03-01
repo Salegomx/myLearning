@@ -570,3 +570,332 @@ datos()
         let paises = json
         console.log(paises)
     })*/
+
+// Otra forma de crear una promesa y consumirla (Promesa anonima)
+/*new Promise((resolve, reject) => {
+    const numero = Math.random();
+    if (numero < 0.5) {
+        reject('El numero es menor a 0.5')
+    } 
+        resolve('El numero es mayor a 0.5')
+}).then(result=>console.log(result)).catch(error=>console.log(error))*/
+
+/*/fetch('https://jsonplaceholder.typicode.com/ussers')
+    .then(response=>console.log(response))*/
+
+/*********************/
+/*** MALA PRACTICA ***/
+/*********************/
+
+// Crear una funcion que retorne una promesa.
+/*let getWeather = function() {
+    return new Promise((resolve, reject) => {
+        reject('Sunny')
+    })
+};
+
+let miPromesa = getWeather();
+    miPromesa.then(result=>console.log(`First param ${result}`),data=>console.log(`Second param ${data}`))*/
+
+// reestructurando la mala practica
+/*let getWeather = function() {
+    return new Promise((resolve, reject) => {
+        reject('Sunny')
+    })
+};
+
+let onSuccess = function(param) {
+    console.log(`First Param ${param}`)
+}
+
+let onError = function(param) {
+    console.log(`Second Param ${param}`)
+}
+
+getWeather()
+    .then(onSuccess,onError)*/
+
+// Ejecutando promesas para obtener el clima y un icono
+/*const getWeather = function() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Cloudy')
+        }, 1000);
+    }) 
+}
+
+const getWeatherIcon = function(weather) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            switch (weather) {
+                case 'Sunny':
+                    resolve('☀️')
+                    break;
+                case 'Cloudy':
+                    resolve('☁️')
+                    break;
+                case 'Rainy':
+                    resolve('🌧️')
+                    break;
+                default:
+                    reject('Icon not found')
+            }
+        }, 1000);
+    })
+}*/
+
+// Mi solucion
+/*let onSuccess = function(param) {
+    getWeatherIcon(param)
+        .then(icon=>console.log(icon))
+}
+
+let onError = function(param) {
+    getWeatherIcon(param)
+        .catch(error=>console.log(error))
+}
+
+getWeather()
+    .then(result=>result)
+    .then(onSuccess)
+    .catch(onError)*/
+// Profe rick:
+/*let onSuccess = function(param) {
+    console.log(`Success ${param}`)
+}
+
+let onError = function(param) {
+    console.log(`Error ${param}`)
+}
+
+getWeather()
+    .then(getWeatherIcon)
+    .then(onSuccess,onError)*/
+
+// JSON placeholder
+/*fetch('https://jsonplaceholder.typicode.com/users')
+    .then(x=>x.json())
+    .then(x=>console.log(x))*/
+
+/*
+    Primero se ejecuta funUno(), que es un reject, por lo tanto se ejecutará EL SEGUNDO PARAMETRO DEL PRIMER .then() que es onError().
+    En el primer .then() se ejecuta la funcion onError() que espera un dato en un parametro, el parametro data recibirá el 404 que esta dentro del reject.
+    Después de todo eso, se ejecuta el segundo .then()porque el error no lo hicismo con un .catch(), sino con un .then() ENTONCES NO SE DETIENE.
+    SI TODO ESTÁ CORRECTOEN LA FUNCION UNO SE EJECUTA LA FUNCION DOS EN EL PRIMER .then() Y EL TEXTO DENTRO DEL RESOLVE SE VA A PASAR COMO PARAMETRO EN LA FUNCION onSuccess()
+*/
+
+/*let funUno = function() {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve('404')
+        }, 1000);
+    })
+}
+
+let funDos = function() {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve('Resuelto')
+        }, 1000);
+    })
+}
+
+let onSuccess = function(param) {
+    console.log(`Success ${param}`)
+}
+
+let onError = function(param) {
+    console.log(`Error ${param}`)
+}
+
+funUno()
+    .then(funDos)
+    .then(onSuccess)
+    .then(onError)*/
+
+/*let funUno = function() {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            reject('404')
+        }, 1000);
+    })
+}
+
+let funDos = function() {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve('Resuelto')
+        }, 1000);
+    })
+}
+
+let onSuccess = function(param) {
+    console.log(`Success ${param}`)
+}
+
+let onError = function(param) {
+    console.log(`Error ${param}`)
+}
+
+funUno()
+    .then(funDos,onError)
+    .then(onSuccess)
+    //.then(onError)
+    .catch(onError)*/
+
+/**********************/
+/*** /MALA PRACTICA ***/
+/**********************/
+
+/*fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response=>response.text())
+    .then(param=>console.log(param))*/
+
+//  Transormar callbacks en promesas y  asegurarse que se ejecuten en orden
+/*( function () {
+    function getUsers() {
+        setTimeout(() => {
+        console.log("Users are ready!!")
+        }, 3000);
+    }
+    function getProjects(params) {
+        setTimeout(() => {
+        console.log("Projects are ready!!")
+        }, 1000);
+    }
+    function getIssues(params) {
+        setTimeout(() => {
+        console.log("Issues are ready!!")
+        }, 2000);
+    }
+    
+    getUsers();
+    getProjects();
+    getIssues();
+} )()*/
+
+/*( function() {
+    const getPromiseUsers = function() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Users are ready')
+                resolve()
+            }, 3000);
+        })
+    }
+    const getPromiseProjects = function() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Projects are ready')
+                resolve()
+            }, 1000);
+        })
+    }
+    const getPromiseIssues = function() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('Issues are ready')
+                resolve()
+            }, 2000);
+        })
+    }
+
+    // Mi solucion
+    getPromiseUsers()
+        .then(result=>{
+            console.log(result)
+            getPromiseProjects()
+                .then(result=> {
+                    console.log(result)
+                    getPromiseIssues()
+                        .then(result=>console.log(result))
+                })
+        })
+
+    // Optimizacion
+    getPromiseUsers()
+        .then((response)=>{
+            return getPromiseProjects()
+        })
+        .then(getPromiseIssues)
+        .catch(err=>console.log('Ocurrio un error'))
+
+})()*/
+
+//Crear dos funciones que retornen promesas. Cada una con un retraso de 2s. La primer promesa deberá ejecutar a la segunda y la seungda funcion debe devolver un texto que diga 'Hola mundo'
+/*const promesaUno = function() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(promesaDos())
+        }, 2000);
+    })
+}
+
+const promesaDos = function() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Hola mundo')
+        }, 2000);
+    })
+}
+
+promesaUno()
+    .then(response=>console.log(response))*/
+
+/*function traditionalFn() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response=>response.json())
+        .then(data=>console.log('Traditional fetch', data));
+    console.log('Traditional message')
+}
+traditionalFn()*/
+
+// Crea dos funciones que retornen una promesa. La primer funcion al ejecutarse debe retornar un objeto (telefono{color, brand}) con dos parametros cada uno.
+// Pero al ejecutarse ese objeto que retorno debe usarse como valor en la ejecucion de la segunda funcion, y esa segunda funcion debe escribir un texto y concatenar algun parametro
+
+/*const promesaUno = function () {
+    return new Promise((resolve, reject)=>{
+        let telefono = {color: 'Rojo', brand: 'Samsung'}
+        resolve(telefono)
+    })
+}
+
+const promesaDos = function (telefono) {
+    const {brand, color} = telefono;
+    return new Promise((resolve, reject)=>{
+        resolve(`Gracias por comprar tu ${brand} ${color}`)
+    })
+}
+
+promesaUno()
+    .then(promesaDos)
+    .then(response=>console.log(response))*/
+
+/*const mostrarTelefono = function(mensaje) {
+    return new Promise((resolve, reject) => {
+        if (mensaje) {
+            resolve('Obtuviste un ' + mensaje.brand)
+        } else {
+            reject('Error')
+        }
+    })
+}
+
+const miPromesa = function() {
+    return new Promise((resolve, reject) => {
+        let tarea = true;
+        if (tarea === true) {
+            let phone = {
+                color: 'Amarillo',
+                brand: 'Apple'
+            }
+            resolve(phone)
+        } else {
+            reject('No obtuviste un iPhone')
+        }
+    })
+}
+
+miPromesa()
+    .then(mostrarTelefono)
+    .then(response=>console.log(response))*/
