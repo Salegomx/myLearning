@@ -899,3 +899,60 @@ const miPromesa = function() {
 miPromesa()
     .then(mostrarTelefono)
     .then(response=>console.log(response))*/
+
+/*Promise.all([
+    fetch('https://jsonplaceholder.typicode.com/users'),
+    fetch('https://jsonplaceholder.typicode.com/posts')
+]).then(responses=>{
+    return Promise.all(responses.map(response=>{
+        return response.json()
+    }))
+}).then(data=>console.log(data))*/
+
+/*******************/
+/** EJERCICIO 23 ***/
+/*******************/
+// Crea dos funciones que retornen una promesa cada una, ejecuta una promesa que te diga si existe un id y que te diga si existe el numero de telefono y la persona.
+/*let usuarios = [
+    {
+        id: 1,
+        nombre: 'fulanito'
+    },
+    {
+        id: 2,
+        nombre: 'sotano'
+    }
+]
+
+let telefonos = [
+    {
+        id: 1,
+        telefono: 5123456789
+    },
+    {
+        id: 2,
+        telefono: 9876543210
+    }
+]
+
+const getId = function(id) {
+    return new Promise((resolve, reject) => {
+        let userFound = usuarios.find((obj)=>obj.id == id);
+        let telephoneFound = telefonos.find((obj)=>obj.id == id);
+
+        if (userFound && telephoneFound) {
+            resolve('ID: '+ id + userFound + telephoneFound)
+        } else {
+            reject('ID no encontrado')
+        }
+    })
+}
+
+const getInfo = function(id) {
+    return new Promise((resolve, reject) => {
+        //resolve(`Nombre: ${}, Telefono: ${}`)
+    })
+}
+
+getId(1)
+    .then(res=>console.log(res))*/
