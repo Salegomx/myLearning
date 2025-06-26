@@ -956,3 +956,115 @@ const getInfo = function(id) {
 
 getId(1)
     .then(res=>console.log(res))*/
+
+/*function getWeather() {
+    fetch('https://api.weather.gov/gridpoints/LWX/34,92/forecast')
+        .then(rsp=>rsp.json())
+        .then(rsp=>console.log(rsp))
+}
+
+getWeather()*/
+
+/*function fetchWeather() {
+    return new Promise((resolve, reject)=>{
+        fetch('https://api.weather.gov/points/37.3591,-121.9241')
+            .then(rsp=>rsp.json())
+            .then(data=>resolve(data.properties.periods[1].shortForecast))
+    })
+}
+
+function displayData(weather) {
+    console.log(weather)
+}
+
+function onError(error) {
+    console.log(error)
+}
+
+fetchWeather()
+    .then(displayData)
+    .catch(onError)*/
+
+const raizCuadrada = value => {
+    if (typeof value !== 'number') {
+        return Promise.reject('El dato DEBE ser un numero')
+    }
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve( {
+                    value,
+                    result: value * value 
+                }
+            )
+        }, 3000);
+    })
+}
+
+async function funcionAsincrona() {
+    try {
+        console.log('Iniciando funcion asincrona');
+        let obj = await raizCuadrada(5);
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada(3);
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada(4);
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada(15);
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada({});
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada(3);
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        obj = await raizCuadrada('');
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        console.log('Finalizando funcion asincrona')
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+funcionAsincrona()
+
+/*async function getValue(value) {
+    if (typeof value !== "number") throw "El dato DEBE ser un numero";
+    return value
+}
+
+async function raizCuadrada2(value) {
+    let thisValue = await getValue(value);
+
+    setTimeout(() => {
+        return {thisValue, result: thisValue * thisValue};
+    }, 3000);
+}
+
+
+raizCuadrada2(5)
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2(3)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2(4)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2(15)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2({})
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2(3)
+    })
+    .then(obj => {
+        console.log(`Valor: ${obj.value}, Resultado: ${obj.result}`)
+        return raizCuadrada2('')
+    })
+    .catch((mensaje) => {
+        console.log(mensaje);
+    })*/
