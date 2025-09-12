@@ -111,3 +111,55 @@ toggle();*/
 boton.addEventListener('click', () => {
     boton.classList.add('botonClickRojo');
 })*/
+
+// Seleccionando el ultimo <a>
+
+/*const links = document.querySelectorAll('a');
+
+console.log(links[links.length - 1]);*/
+
+//console.log(document.querySelectorAll('a')[2])
+
+//console.log(document.querySelectorAll('#prueba li')[1]);
+
+// Comprobar si hay un atributo
+// hasAttribute()
+
+// Remover si hay un atributo
+// removeAttribute()
+
+console.log(typeof document.querySelector('[data-description]').getAttribute('data-description'));
+
+let $link = document.querySelector('a');
+let $caja = document.querySelector('[data-description]');
+let $titulo = document.querySelector('#empresas');
+
+$caja.dataset.description = 'Hello world';
+
+console.log($caja.dataset.description);
+
+//$caja.style.backgroundColor = 'red';
+
+console.log(window.getComputedStyle($caja));
+console.log(getComputedStyle($caja).getPropertyValue('background-color'));
+
+$link.style.setProperty('text-decoration', 'none');
+$titulo.style.width = '50%';
+$titulo.style.textAlign = 'center';
+$titulo.style.marginLeft = 'auto';
+$titulo.style.marginRight = 'auto';
+$titulo.style.padding = '1rem';
+$titulo.style.borderRadius = '1rem';
+
+let $html = document.documentElement;
+let $body = document.body;
+
+let variableOscura = getComputedStyle($html).getPropertyValue('--color-dark');
+let variableAmarilla = getComputedStyle($html).getPropertyValue('--color-yellow');
+
+console.log(variableAmarilla, variableOscura);
+
+$body.style.backgroundColor = variableOscura;
+
+$html.style.setProperty('--color-dark', 'orange');
+$body.style.setProperty('background-color', 'blue');
