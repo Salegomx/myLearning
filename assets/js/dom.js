@@ -159,7 +159,27 @@ let variableAmarilla = getComputedStyle($html).getPropertyValue('--color-yellow'
 
 console.log(variableAmarilla, variableOscura);
 
-$body.style.backgroundColor = variableOscura;
+//$body.style.backgroundColor = variableOscura;
 
 $html.style.setProperty('--color-dark', 'orange');
-$body.style.setProperty('background-color', 'blue');
+//$body.style.setProperty('background-color', 'blue');
+
+// html methods
+// innerText() - Se creo para internet explorer
+// textContent() - este es estandar para todos los navegadores
+// innerHTML() - 
+// outerHTML() -
+
+let $texto = document.getElementById('textoJs');
+let text = `
+    <h2>Hola
+     mundo</h2>
+    <p>Este es un 
+    texto de prueba</p>
+    <p><b>Otro</b> <i>parrafo</i></p>
+`;
+
+//$texto.textContent = text;
+//$texto.innerHTML = text;
+//$texto.outerHTML = text;
+$texto.innerText = text; // Saltos de linea
